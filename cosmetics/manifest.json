@@ -1,0 +1,23 @@
+{
+  "name": "TheMostLethalCOSMETICS",
+  "version_number": "1.1.0",
+  "website_url": "https://thunderstore.io/c/lethal-company/p/TeamClark/TheMostLethalCompany/",
+  "description": "Contains all of the cosmetic mods used within TheMostLethalCompany modpack.",
+  "dependencies": [
+    "x753-More_Suits-1.4.1",
+    "Hexnet111-SuitSaver-1.1.2",
+    "Verity-TooManySuits-1.0.4",
+    "TeamClark-SCP_Foundation_Suit-1.0.1",
+    "TeamClark-CombineEliteSuit-1.0.2",
+    "TeamClark-BigBossSuit-1.0.1",
+    "TeamClark-Death_Korps_Of_Krieg_Suit-1.0.0",
+    "TeamClark-ODST_Suit-1.0.0",
+    "Flamango-OmniMan_Base_Suits-1.0.0",
+    "QuFix-Lidl_Suit-1.0.3",
+    "ViViKo-MedicSuit-1.0.2",
+    "AlexCodesGames-AdditionalSuits-1.1.3",
+    "TeamClark-Vault_Boy_Suit-1.0.0",
+    "TeamClark-Tesco_Suit-1.0.0",
+    "ViViKo-SantaSuit-1.0.3"
+  ]
+}
