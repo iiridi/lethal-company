@@ -1,8 +1,8 @@
 {
-  "name": "TheMostLethalCOSMETICS",
-  "version_number": "1.1.0",
-  "website_url": "https://thunderstore.io/c/lethal-company/p/TeamClark/TheMostLethalCompany/",
-  "description": "Contains all of the cosmetic mods used within TheMostLethalCompany modpack.",
+  "name": "OSHAViolationCosmetics",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/iiridi/lethal-company",
+  "description": "Contains all of the cosmetic mods used within the OSHAViolation modpack.",
   "dependencies": [
     "x753-More_Suits-1.4.1",
     "Hexnet111-SuitSaver-1.1.2",
