@@ -1,0 +1,4 @@
+(executable
+ (public_name lethal_company)
+ (name main)
+ (libraries lethal_company))
