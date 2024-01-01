@@ -1,2 +1,5 @@
 (library
- (name lethal_company))
+ (name lethal_company)
+ (libraries async core)
+ (preprocess
+  (pps ppx_jane)))

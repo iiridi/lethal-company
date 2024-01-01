@@ -1,4 +1,5 @@
 (executable
- (public_name lethal_company)
- (name main)
- (libraries lethal_company))
+ (name lc)
+ (libraries async core_unix.command_unix core lethal_company)
+ (preprocess
+  (pps ppx_jane)))
