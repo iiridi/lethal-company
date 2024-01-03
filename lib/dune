@@ -1,5 +1,5 @@
 (library
  (name lethal_company)
- (libraries async core)
+ (libraries async core jsonaf)
  (preprocess
-  (pps ppx_jane)))
+  (pps ppx_jane ppx_jsonaf_conv)))
