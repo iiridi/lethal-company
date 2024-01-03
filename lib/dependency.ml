@@ -7,7 +7,7 @@ type t =
   ; name : string
   ; version : Version.t
   }
-[@@deriving sexp]
+[@@deriving fields, sexp]
 
 let dep team name version = { team; name; version }
 

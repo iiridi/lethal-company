@@ -9,6 +9,7 @@ include Stringable.S with type t := t
 (* Constants *)
 val _2018 : t
 val _5bit : t
+val akechii : t
 val alexcodesgames : t
 val bepinex : t
 val blink9803 : t
@@ -29,6 +30,7 @@ val flipmods : t
 val futuresaivor : t
 val hexnet111 : t
 val homelessginger : t
+val itsmeowdev : t
 val integritychaos : t
 val jamil : t
 val jordo : t
@@ -51,14 +53,18 @@ val owen3h : t
 val ozone : t
 val pinta : t
 val pooble : t
+val postmortem : t
 val potatoepet : t
 val quackandcheese : t
+val quackinggander : t
 val qufix : t
 val redeye : t
 val rickarg : t
 val rozebud : t
 val rugbugredfern : t
-val run580 : t
+val rune580 : t
+val scoopy : t
+val sfdesat : t
 val silvercore : t
 val sligili : t
 val spyci : t
@@ -68,6 +74,8 @@ val suskitech : t
 val svmatt : t
 val taffyko : t
 val teamclark : t
+val thedeadsnake : t
+val thefluff : t
 val toskan4134 : t
 val twindimensionalproductions : t
 val verity : t
