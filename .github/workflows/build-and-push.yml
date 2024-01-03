@@ -1,0 +1,31 @@
+name: Build and Push Package
+on:
+    push:
+        branches:
+            - main
+jobs:
+    build_and_push:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout tree
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ github.head_ref }}
+                  fetch-depth: 0
+
+            - name: Set-up OCaml
+              uses: ocaml/setup-ocaml@v2
+              with:
+                  ocaml-compiler: "5.0"
+
+            - id: version
+              uses: codacy/git-version@2.7.1
+
+            - run: mkdir output
+            - run: opam install . --deps-only
+            - run: opam exec -- dune exec -- bin/lc.exe -- -version-str "${{ steps.version.outputs.version }}" -static-dir "./static" > output/thunderstore.toml
+            - env:
+                  THUNDERSTORE_TOKEN: ${{ secrets.THUNDERSTORE_TOKEN }}
+              run: |
+                  cd output
+                  ../vendored/tcli publish --token $THUNDERSTORE_TOKEN

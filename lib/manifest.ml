@@ -124,7 +124,7 @@ let thunderstore_toml t icon readme =
 schemaVersion = "0.0.1"
 
 [package]
-namespace = "iiridi"
+namespace = "iiri"
 name = "%{t.name}"
 versionNumber = "%{t.version_number#Version}"
 description = "%{t.description}"
