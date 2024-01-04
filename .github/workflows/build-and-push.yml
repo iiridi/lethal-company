@@ -20,6 +20,8 @@ jobs:
 
             - id: version
               uses: codacy/git-version@2.7.1
+              with:
+                  release-branch: main
 
             - run: mkdir output
             - run: opam install . --deps-only
