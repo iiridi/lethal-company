@@ -4,7 +4,7 @@ COPY dune-project lethal_company.opam ./
 RUN opam install . --deps-only
 
 COPY bin lib ./
-RUN opam exec -- dune build
+RUN opam exec -- dune build bin/lc.exe
 RUN mv _build/default/bin/lc.exe lc
 
 
