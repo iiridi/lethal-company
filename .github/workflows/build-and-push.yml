@@ -29,3 +29,9 @@ jobs:
               run: |
                   cd output
                   ../vendored/tcli publish --token $THUNDERSTORE_TOKEN
+
+            - id: tag_version
+              uses: mathieudutour/github-tag-action@v6.1
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  custom_tag: v${{ steps.version.outputs.version }}
