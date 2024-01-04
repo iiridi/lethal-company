@@ -1,5 +1,6 @@
 FROM ocaml/opam:debian-11-ocaml-4.12 AS builder
 
+RUN pwd
 COPY dune-project lethal_company.opam ./
 RUN opam install . --deps-only
 
@@ -11,5 +12,5 @@ RUN mv _build/default/bin/lc.exe lc
 
 FROM debian:11-slim AS runner
 
-COPY --from=builder ./lc lc
+COPY --from=builder  lc lc
 ENTRYPOINT [ "./lc" ]
