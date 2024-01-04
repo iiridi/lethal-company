@@ -7,7 +7,7 @@ authors: ["iiridi <ilyfr@iridi.cc>"]
 homepage: "https://github.com/iiridi/lethal-company"
 bug-reports: "https://github.com/iiridi/lethal-company/issues"
 depends: [
-  "ocaml" {= "4.12.0"}
+  "ocaml" {= "4.12.1"}
   "dune" {>= "3.12"}
   "async"
   "core"
