@@ -18,6 +18,8 @@ jobs:
               with:
                   release-branch: main
 
+            - uses: docker/setup-buildx-action@v2
+
             - name: Build and push
               uses: docker/build-push-action@v5
               with:
