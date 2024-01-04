@@ -143,7 +143,7 @@ readme = "./README.md"
 outdir = "./build"
 
 [[build.copy]]
-source = "./dist"
+source = "./static"
 target = ""
 
 
