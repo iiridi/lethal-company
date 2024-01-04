@@ -26,6 +26,8 @@ jobs:
                   release-branch: main
 
             - uses: docker/setup-buildx-action@v2
+              with:
+                  driver-opts: network=host
 
             - name: Build and push
               uses: docker/build-push-action@v5
