@@ -92,7 +92,7 @@ let pack version_number =
          ; d junlethalcompany "GamblingMachineAtTheCompany" (v 1 1 0)
          ; d postmortem "BetterLightning" (v 1 0 2)
          ; d akechii "DiscountAlert" (v 2 3 0)
-         ; d thefluff "FairAi" (v 1 2 5)
+         ; d thefluff "FairAI" (v 1 2 5)
          ; d taffyko "NiceChat" (v 1 2 3)
          ; d _5bit "FPSSpectate" (v 1 0 1)
          ; d nicehairs "NuclearLib" (v 1 0 4)
