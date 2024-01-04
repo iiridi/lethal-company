@@ -142,10 +142,6 @@ icon = "./icon.png"
 readme = "./README.md"
 outdir = "./build"
 
-[[build.copy]]
-source = "./static"
-target = ""
-
 
 [publish]
 repository = "https://thunderstore.io"
