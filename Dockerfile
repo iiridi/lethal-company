@@ -14,11 +14,11 @@ FROM debian:11-slim AS runner
 ARG TOKEN
 ARG VERSION
 
-COPY --from=builder lc lc
-COPY vendored/tcli tcli
-COPY static/ output/
+# COPY --from=builder ./lc lc
+# COPY ./vendored/tcli tcli
+# COPY ./static/ output/
 
-RUN \
-    lc -version-str "${VERSION}" > output/thunderstore.toml \
-    && cd output \
-    && ../tcli publish --token "${TOKEN}"
+# RUN \
+#     lc -version-str "${VERSION}" > output/thunderstore.toml \
+#     && cd output \
+#     && ../tcli publish --token "${TOKEN}"
