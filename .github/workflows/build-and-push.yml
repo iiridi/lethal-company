@@ -41,7 +41,9 @@ jobs:
             - run: docker run localhost:5000/lc:latest -version-str "${{ steps.version.outputs.version }}"  > static/thunderstore.toml
             - run: |
                   cd static \
-                  && ../vendored/tcli publish --token "${{ secrets.THUNDERSTORE_TOKEN }}"
+                  && mkdir dist \
+                  && ../vendored/tcli build \
+                  && ../vendored/tcli publish --token '${{ secrets.THUNDERSTORE_TOKEN }}' --file 'build/*.zip'
 
             - id: tag_version
               uses: mathieudutour/github-tag-action@v6.1
