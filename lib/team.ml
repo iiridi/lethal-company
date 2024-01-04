@@ -2,7 +2,7 @@ open! Core
 open! Async
 open! Import
 
-type t = string [@@deriving jsonaf, sexp]
+type t = string [@@deriving compare, sexp]
 
 let to_string = Fn.id
 let of_string = Fn.id

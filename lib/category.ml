@@ -73,10 +73,3 @@ let of_string x =
   | "mods" -> Mods
   | x -> raise_s [%message "invalid category" ~_:(x : string)]
 ;;
-
-let jsonaf_of_t t = `String (to_string t)
-
-let t_of_jsonaf = function
-  | `String version -> of_string version
-  | x -> raise_s [%message "unexpected tag in version" (x : Jsonaf.t)]
-;;

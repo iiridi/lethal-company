@@ -1,51 +1,92 @@
 name: Build and Push Package
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+    - main
+    - feat/*
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
-    build_and_push:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        services:
-            registry:
-                image: registry:2
-                ports:
-                    - 5000:5000
+    permissions:
+      contents: read
+      packages: write
 
-        steps:
-            - name: Checkout tree
-              uses: actions/checkout@v4
-              with:
-                  ref: ${{ github.head_ref }}
-                  fetch-depth: 0
+    services:
+      registry:
+        image: registry:2
+        ports:
+        - 5000:5000
 
-            - id: version
-              uses: codacy/git-version@2.7.1
-              with:
-                  release-branch: main
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.head_ref }}
+        fetch-depth: 0
 
-            - uses: docker/setup-buildx-action@v2
-              with:
-                  driver-opts: network=host
+    - name: Login to docker registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Build and push
-              uses: docker/build-push-action@v5
-              with:
-                  context: .
-                  push: true
-                  tags: "localhost:5000/lc:latest"
-                  cache-from: type=gha
-                  cache-to: type=gha,mode=max
+    - uses: docker/setup-buildx-action@v2
+      with:
+        driver-opts: network=host
 
-            - run: docker run localhost:5000/lc:latest -version-str "${{ steps.version.outputs.version }}"  > static/thunderstore.toml
-            - run: |
-                  cd static \
-                  && mkdir dist \
-                  && ../vendored/tcli publish --token '${{ secrets.THUNDERSTORE_TOKEN }}'
+    - name: Build and push
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: "localhost:5000/lc:latest"
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
 
-            - id: tag_version
-              uses: mathieudutour/github-tag-action@v6.1
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  custom_tag: ${{ steps.version.outputs.version }}
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout tree
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.head_ref }}
+        fetch-depth: 0
+
+    - id: version
+      uses: codacy/git-version@2.7.1
+      with:
+        release-branch: main
+
+    - uses: docker/setup-buildx-action@v2
+      with:
+        driver-opts: network=host
+
+    - name: Build and push
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: "localhost:5000/lc:latest"
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+    - run: docker run localhost:5000/lc:latest manifest "${{ steps.version.outputs.version }}"  > static/thunderstore.toml
+    - run: docker run localhost:5000/lc:latest version "${{ steps.version.outputs.version }}"  > static/thunderstore.toml
+    - run: |
+        cd static \
+        && mkdir dist \
+        && ../vendored/tcli publish --token '${{ secrets.THUNDERSTORE_TOKEN }}'
+
+    - id: tag_version
+      uses: mathieudutour/github-tag-action@v6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        custom_tag: ${{ steps.version.outputs.version }}

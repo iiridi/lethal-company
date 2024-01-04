@@ -10,7 +10,7 @@ type t =
   ; dependencies : Dependency.t list
   ; categories : Category.t list
   }
-[@@deriving jsonaf, sexp]
+[@@deriving sexp]
 
 let pack version_number =
   { name = "OSHAViolation"

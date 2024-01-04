@@ -23,9 +23,41 @@ let of_string version =
   | x -> raise_s [%message "malformed dependency string" (x : string list)]
 ;;
 
-let jsonaf_of_t t = `String (to_string t)
+module DiffMap = struct
+  include Map.Make (struct
+      type t = Team.t * string [@@deriving compare, sexp]
+    end)
 
-let t_of_jsonaf = function
-  | `String version -> of_string version
-  | x -> raise_s [%message "unexpected tag in dependency" (x : Jsonaf.t)]
-;;
+  let of_list ts = List.map ts ~f:(fun t -> (t.team, t.name), t.version) |> of_alist_exn
+end
+
+module Diff = struct
+  type nonrec t =
+    { added : t list
+    ; removed : t list
+    ; changed : (t * t) list
+    }
+
+  let diff ~prev ~next =
+    let prev = DiffMap.of_list prev in
+    let next = DiffMap.of_list next in
+    Map.fold_symmetric_diff
+      prev
+      next
+      ~data_equal:Version.equal
+      ~init:{ added = []; removed = []; changed = [] }
+      ~f:(fun { added; removed; changed } ((team, name), change) ->
+        match change with
+        | `Left version ->
+          { added; changed; removed = { team; name; version } :: removed }
+        | `Right version -> { removed; changed; added = { team; name; version } :: added }
+        | `Unequal (prev, next) ->
+          { removed
+          ; added
+          ; changed =
+              ({ team; name; version = prev }, { team; name; version = next }) :: changed
+          })
+  ;;
+end
+
+let diff = Diff.diff

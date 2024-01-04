@@ -23,6 +23,6 @@ type t =
   | Tools
   | Modpacks
   | Mods
-[@@deriving jsonaf, sexp]
+[@@deriving sexp]
 
 include Stringable.S with type t := t
