@@ -3,8 +3,8 @@ FROM ocaml/opam:debian-11-ocaml-4.12 AS builder
 COPY dune-project lethal_company.opam ./
 RUN opam install . --deps-only
 
-COPY bin lib ./
-RUN ls -lah
+COPY bin bin
+COPY lib lib
 RUN opam exec -- dune build bin/lc.exe
 RUN mv _build/default/bin/lc.exe lc
 
@@ -16,7 +16,7 @@ ARG VERSION
 
 COPY --from=builder lc lc
 COPY vendored/tcli tcli
-COPY static output
+COPY static/ output/
 
 RUN \
     lc -version-str "${VERSION}" > output/thunderstore.toml \
