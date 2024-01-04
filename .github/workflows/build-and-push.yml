@@ -23,9 +23,11 @@ jobs:
               with:
                   release-branch: main
 
-            - run: mkdir output
+            - run: |
+                  mkdir output
+                  cp static/* output/
             - run: opam install . --deps-only
-            - run: opam exec -- dune exec bin/lc.exe -- -version-str "${{ steps.version.outputs.version }}" -static-dir "../static" > output/thunderstore.toml
+            - run: opam exec -- dune exec bin/lc.exe -- -version-str "${{ steps.version.outputs.version }}"
             - env:
                   THUNDERSTORE_TOKEN: ${{ secrets.THUNDERSTORE_TOKEN }}
               run: |

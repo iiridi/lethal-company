@@ -105,7 +105,7 @@ let pack version_number =
   }
 ;;
 
-let thunderstore_toml t icon readme =
+let thunderstore_toml t =
   let deps =
     List.map t.dependencies ~f:(fun dep ->
       let team = Dependency.team dep in
@@ -135,8 +135,8 @@ containsNsfwContent = false
 
 
 [build]
-icon = "%{icon}"
-readme = "%{readme}"
+icon = "./icon.png"
+readme = "./README.md"
 outdir = "./build"
 
 [[build.copy]]
