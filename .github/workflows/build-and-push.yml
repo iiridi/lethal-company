@@ -27,7 +27,7 @@ jobs:
                   mkdir output
                   cp -r static/* output/
             - run: opam install . --deps-only
-            - run: opam exec -- dune exec bin/lc.exe -- -version-str "${{ steps.version.outputs.version }}"
+            - run: opam exec -- dune exec bin/lc.exe -- -version-str "${{ steps.version.outputs.version }}" > output/thunderstore.toml
             - env:
                   THUNDERSTORE_TOKEN: ${{ secrets.THUNDERSTORE_TOKEN }}
               run: |
