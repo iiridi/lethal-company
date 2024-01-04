@@ -6,6 +6,13 @@ on:
 jobs:
     build_and_push:
         runs-on: ubuntu-latest
+
+        services:
+            registry:
+                image: registry:2
+                ports:
+                    - 5000:5000
+
         steps:
             - name: Checkout tree
               uses: actions/checkout@v4
@@ -24,15 +31,15 @@ jobs:
               uses: docker/build-push-action@v5
               with:
                   context: .
-                  push: false
-                  tags: "local"
+                  push: true
+                  tags: "localhost:5000/lc:latest"
                   cache-from: type=gha
                   cache-to: type=gha,mode=max
-                  build-args: |
-                      TOKEN=${{ secrets.THUNDERSTORE_TOKEN }}
-                      VERSION=${{ steps.version.outputs.version }}
 
-            - run: docker run local
+            - run: docker run localhost:5000/lc:latest -version-str "${{ steps.version.outputs.version }}"  > static/thunderstore.toml
+            - run: |
+                  cd static \
+                  && ../vendored/tcli publish --token "${{ secrets.THUNDERSTORE_TOKEN }}"
 
             - id: tag_version
               uses: mathieudutour/github-tag-action@v6.1

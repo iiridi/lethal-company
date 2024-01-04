@@ -11,14 +11,5 @@ RUN mv _build/default/bin/lc.exe lc
 
 FROM debian:11-slim AS runner
 
-ARG TOKEN
-ARG VERSION
-
-# COPY --from=builder ./lc lc
-# COPY ./vendored/tcli tcli
-# COPY ./static/ output/
-
-# RUN \
-#     lc -version-str "${VERSION}" > output/thunderstore.toml \
-#     && cd output \
-#     && ../tcli publish --token "${TOKEN}"
+COPY --from=builder ./lc lc
+ENTRYPOINT [ "./lc" ]
