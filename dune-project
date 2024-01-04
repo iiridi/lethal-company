@@ -19,7 +19,7 @@
  (allow_empty)
  (depends
   (ocaml
-   (= 4.12.0))
+   (= 4.12.1))
   dune
   async
   core
