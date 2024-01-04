@@ -13,7 +13,7 @@ type t =
 [@@deriving jsonaf, sexp]
 
 let pack version_number =
-  { name = "OSHAViolationCore"
+  { name = "OSHAViolation"
   ; version_number
   ; website_url = "https://github.com/iiridi/lethal-company"
   ; description = "A modpack that's not compliant with OSHA 3348-05"
