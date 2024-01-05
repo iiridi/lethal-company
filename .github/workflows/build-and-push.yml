@@ -41,7 +41,6 @@ jobs:
     - run: docker run localhost:5000/lc:latest -version-str "${{ steps.version.outputs.version }}"  > static/thunderstore.toml
     - run: |
         cd static \
-        && mkdir dist \
         && ../vendored/tcli publish --token '${{ secrets.THUNDERSTORE_TOKEN }}'
 
     - id: tag_version
