@@ -3,23 +3,19 @@ open! Async
 open! Import
 
 type t =
-  { team : Team.t
+  { team : string
   ; name : string
   ; version : Version.t
   }
 [@@deriving fields, sexp]
 
 let dep team name version = { team; name; version }
-
-let to_string { team; name; version } =
-  [%string "%{team#Team}-%{name}-%{version#Version}"]
-;;
+let to_string { team; name; version } = [%string "%{team}-%{name}-%{version#Version}"]
 
 let of_string version =
   let version = String.split version ~on:'-' in
   match version with
-  | [ team; name; version ] ->
-    { team = Team.of_string team; name; version = Version.of_string version }
+  | [ team; name; version ] -> { team; name; version = Version.of_string version }
   | x -> raise_s [%message "malformed dependency string" (x : string list)]
 ;;
 
