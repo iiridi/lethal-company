@@ -21,7 +21,7 @@ let pack version_number =
       (let d = Dependency.dep in
        let v = Version.v in
        [ d "5Bit" "VoiceHUD" (v 1 0 4)
-       ; d "AbyssalCompanyTeam" "AbyssalAudio" (v 1 1 4)
+       ; d "AbyssalCompanyTeam" "AbyssalAudio" (v 1 1 5)
        ; d "akechii" "DiscountAlert" (v 2 3 0)
        ; d "AgentRev" "ShootableMouthDogs" (v 1 0 1)
        ; d "axd1x8a" "LCAmmoCheck" (v 1 0 0)
@@ -47,9 +47,9 @@ let pack version_number =
        ; d "femboytv" "LethalPosters" (v 1 2 0)
        ; d "FlipMods" "FasterItemDropship" (v 1 2 1)
        ; d "FlipMods" "LetMeLookDown" (v 1 0 1)
-       ; d "FlipMods" "ReservedFlashlightSlot" (v 1 5 7)
+         (* ; d "FlipMods" "ReservedFlashlightSlot" (v 1 5 7)
        ; d "FlipMods" "ReservedItemSlotCore" (v 1 7 4)
-       ; d "FlipMods" "ReservedWalkieSlot" (v 1 5 3)
+       ; d "FlipMods" "ReservedWalkieSlot" (v 1 5 3) *)
        ; d "FlipMods" "TooManyEmotes" (v 1 7 7)
        ; d "freesnow" "CollectYourDead" (v 1 0 0)
        ; d "fumiko" "BetterMonitor" (v 0 1 3)
