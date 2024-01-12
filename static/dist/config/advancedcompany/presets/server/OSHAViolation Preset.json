@@ -10,17 +10,51 @@
     "save_suits_after_death": true,
     "save_progress": false,
     "xp_multiplier": 1.5,
-    "starting_xp": 500
+    "starting_xp": 500,
+    "day_length": 700
   },
   "moons": {
-    "experimentation_price": 0,
-    "vow_price": 0,
-    "assurance_price": 0,
-    "offense_price": 0,
-    "march_price": 0,
-    "rend_price": 550,
-    "dine_price": 600,
-    "titan_price": 700,
+    "experimentation": {
+      "price": 0,
+      "scrap_amount_modifier": 1.0,
+      "scrap_value_modifier": 1.0
+    },
+    "vow": {
+      "price": 0,
+      "scrap_amount_modifier": 1.0,
+      "scrap_value_modifier": 1.0
+    },
+    "assurance": {
+      "price": 0,
+      "scrap_amount_modifier": 1.0,
+      "scrap_value_modifier": 1.0
+    },
+    "offense": {
+      "price": 0,
+      "scrap_amount_modifier": 1.0,
+      "scrap_value_modifier": 1.0
+    },
+    "march": {
+      "price": 0,
+      "scrap_amount_modifier": 1.0,
+      "scrap_value_modifier": 1.0
+    },
+    "rend": {
+      "price": 550,
+      "scrap_amount_modifier": 1.0,
+      "scrap_value_modifier": 1.0
+    },
+    "dine": {
+      "price": 600,
+      "scrap_amount_modifier": 1.0,
+      "scrap_value_modifier": 1.0
+    },
+    "titan": {
+      "price": 700,
+      "scrap_amount_modifier": 1.0,
+      "scrap_value_modifier": 1.0
+    },
+    "free_moons": [],
     "activate_moon_prices": true,
     "clear_scrap_amount_multiplier": 1.0,
     "clear_scrap_value_multiplier": 1.0,
@@ -85,6 +119,12 @@
       "price": 50,
       "max_discount": 70,
       "weight": 1.06666672
+    },
+    "headset": {
+      "active": true,
+      "price": 50,
+      "max_discount": 70,
+      "weight": 1.03809524
     },
     "radar_booster": {
       "active": true,
@@ -163,7 +203,8 @@
       "price": 50,
       "max_discount": 80,
       "weight": 1.0
-    }
+    },
+    "free_items": []
   },
   "player_perks": {
     "sprint_speed": {
