@@ -80,6 +80,12 @@
       "max_discount": 50,
       "weight": 1.47619045
     },
+    "helmet_lamp": {
+      "active": true,
+      "price": 50,
+      "max_discount": 70,
+      "weight": 1.06666672
+    },
     "radar_booster": {
       "active": true,
       "price": 60,
