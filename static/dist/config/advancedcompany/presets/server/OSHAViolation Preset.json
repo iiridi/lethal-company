@@ -11,7 +11,7 @@
     "save_progress": false,
     "xp_multiplier": 1.5,
     "starting_xp": 500,
-    "day_length": 700
+    "day_length": 1150
   },
   "moons": {
     "experimentation": {
