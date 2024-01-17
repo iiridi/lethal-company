@@ -7,7 +7,7 @@ type t =
   ; minor : int
   ; patch : int
   }
-[@@deriving sexp]
+[@@deriving compare, equal, sexp]
 
 let v major minor patch = { major; minor; patch }
 let to_string { major; minor; patch } = [%string "%{major#Int}.%{minor#Int}.%{patch#Int}"]

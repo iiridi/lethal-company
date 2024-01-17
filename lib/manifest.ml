@@ -8,9 +8,9 @@ type t =
   ; website_url : string
   ; description : string
   ; dependencies : Dependency.t list
-  ; categories : Category.t list
+  ; categories : Category.t list [@default []]
   }
-[@@deriving jsonaf, sexp]
+[@@deriving fields, jsonaf, sexp]
 
 let pack version_number =
   { name = "OSHAViolation"
