@@ -126,6 +126,12 @@
       "max_discount": 70,
       "weight": 1.03809524
     },
+    "tactical_helmet": {
+      "active": true,
+      "price": 200,
+      "max_discount": 70,
+      "weight": 1.152381
+    },
     "radar_booster": {
       "active": true,
       "price": 60,
@@ -166,7 +172,7 @@
       "active": true,
       "price": 30,
       "max_discount": 80,
-      "weight": 1.11428571
+      "weight": 1.07619047
     },
     "pro_flashlight": {
       "active": true,
@@ -333,7 +339,10 @@
         500,
         1000,
         1500,
-        2500
+        2500,
+        3500,
+        5000,
+        7500
       ]
     }
   },

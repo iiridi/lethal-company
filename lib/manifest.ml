@@ -64,7 +64,6 @@ let pack version_number =
        ; d "Jordo" "NeedyCats" (v 1 1 1)
        ; d "JunLethalCompany" "GamblingMachineAtTheCompany" (v 1 3 4)
        ; d "KayNetsua" "E_Gypt_Moon" (v 2 0 7)
-       ; d "Kittenji" "LaserPointerDetonator" (v 1 0 0)
        ; d "kRYstall9" "FastSwitchPlayerViewInRadar" (v 1 3 2)
        ; d "kuba6000" "LC_Masked_Fix" (v 0 0 2)
        ; d "kyxino" "LethalUtilities" (v 1 2 17)
@@ -91,7 +90,7 @@ let pack version_number =
        ; d "Pinta" "PintoBoy" (v 1 0 3)
        ; d "Pooble" "LCBetterSaves" (v 1 7 1)
        ; d "PostMortem" "BetterLightning" (v 1 0 3)
-       ; d "PotatoePet" "AdvancedCompany" (v 1 0 114)
+       ; d "PotatoePet" "AdvancedCompany" (v 1 0 118)
        ; d "quackandcheese" "MirrorDecor" (v 1 2 3)
        ; d "quackinggander" "SCPPosters" (v 1 1 1)
        ; d "RickArg" "Helmet_Cameras" (v 2 1 5)
@@ -121,8 +120,8 @@ let pack version_number =
        ; d "Woecust" "Immersive_Visor" (v 0 1 601)
        ; d "x753" "Mimics" (v 2 3 2)
        ; d "Yoshify" "DiscJockey" (v 1 2 0)
-       ; d "Zingar" "Atlas_Abyss" (v 1 1 0)
-       ; d "Zingar" "SecretLabs" (v 3 3 1)
+       ; d "Zingar" "Atlas_Abyss" (v 1 1 1)
+       ; d "Zingar" "SecretLabs" (v 3 3 2)
        ])
   ; categories = Category.[ Modpacks ]
   }
