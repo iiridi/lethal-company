@@ -21,7 +21,6 @@ let pack version_number =
       (let d = Dependency.dep in
        let v = Version.v in
        [ d "5Bit" "VoiceHUD" (v 1 0 4)
-       ; d "AbyssalCompanyTeam" "AbyssalAudio" (v 1 3 1)
        ; d "AinaVT" "LethalConfig" (v 1 3 4)
        ; d "AgentRev" "ShootableMouthDogs" (v 1 0 1)
        ; d "akechii" "DiscountAlert" (v 2 3 0)
@@ -70,6 +69,7 @@ let pack version_number =
        ; d "kuba6000" "LC_Masked_Fix" (v 0 0 2)
        ; d "kyxino" "LethalUtilities" (v 1 2 20)
        ; d "LeKAKiD" "SignalTranslatorAligner" (v 1 1 0)
+       ; d "LethalResonance" "LETHALRESONANCE" (v 2 0 6)
        ; d "loaforc" "FacilityMeltdown" (v 2 0 1)
        ; d "Major_And_Skiz" "MoreInteriors" (v 1 1 0)
        ; d "MegaPiggy" "BuyableShotgunShells" (v 1 0 2)
