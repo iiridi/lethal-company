@@ -172,7 +172,7 @@
       "active": true,
       "price": 30,
       "max_discount": 80,
-      "weight": 1.07619047
+      "weight": 1.11428571
     },
     "pro_flashlight": {
       "active": true,
@@ -339,10 +339,7 @@
         500,
         1000,
         1500,
-        2500,
-        3500,
-        5000,
-        7500
+        2500
       ]
     }
   },
