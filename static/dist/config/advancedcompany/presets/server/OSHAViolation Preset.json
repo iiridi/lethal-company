@@ -18203,7 +18203,7 @@
         "key": "Tactical helmet",
         "value": {
           "active": true,
-          "override_price": false,
+          "override_price": true,
           "price": 150,
           "override_max_discount": false,
           "max_discount": 80,
